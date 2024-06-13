@@ -12,7 +12,8 @@ import { LoaderComponent } from './loader/loader.component';
   imports: [
   ],
   exports: [
-    NgLoaderComponent
+    NgLoaderComponent,
+    LoaderComponent
   ]
 })
 export class NgLoaderModule { }
