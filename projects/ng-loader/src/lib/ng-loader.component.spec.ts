@@ -6,10 +6,12 @@ describe('NgLoaderComponent', () => {
   let component: NgLoaderComponent;
   let fixture: ComponentFixture<NgLoaderComponent>;
 
-  beforeEach(() => {
-    TestBed.configureTestingModule({
-      declarations: [NgLoaderComponent]
-    });
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      imports: [NgLoaderComponent]
+    })
+    .compileComponents();
+
     fixture = TestBed.createComponent(NgLoaderComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

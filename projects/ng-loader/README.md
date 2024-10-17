@@ -1,24 +1,63 @@
-# NgLoader
+# NgLoader Library
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.0.
+This is a library for loading Angular components dynamically.
 
-## Code scaffolding
+## Installation
 
-Run `ng generate component component-name --project ng-loader` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project ng-loader`.
-> Note: Don't forget to add `--project ng-loader` or else it will be added to the default project in your `angular.json` file. 
+```bash
+npm install @manthanankolekar/ng-loader
+```
 
-## Build
+## Usage
 
-Run `ng build ng-loader` to build the project. The build artifacts will be stored in the `dist/` directory.
+Import
 
-## Publishing
+```typescript
+import { Component } from '@angular/core';
 
-After building your library with `ng build ng-loader`, go to the dist folder `cd dist/ng-loader` and run `npm publish`.
+import { NgLoaderComponent } from '@manthanankolekar/ng-loader';
 
-## Running unit tests
+@Component({
+  selector: 'app-root',
+  standalone: true,
+  imports: [
+    NgLoaderComponent
+  ],
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
+})
+export class AppComponent {
+  title = 'ng-loader';
+}
+```
 
-Run `ng test ng-loader` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Use
 
-## Further help
+```html
+<ng-loader [loading]="isLoading"></ng-loader>
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+```typescript
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-root',
+  standalone: true,
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
+})
+
+export class AppComponent {
+  isLoading = true;
+
+  constructor() {
+    setTimeout(() => {
+      this.isLoading = false;
+    }, 5000);
+  }
+}
+```
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
