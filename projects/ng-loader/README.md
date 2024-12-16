@@ -1,6 +1,11 @@
-# NgLoader Library
+# NgLoader
 
-This is a library for loading Angular components dynamically.
+This is a simple Angular loader library.
+
+![npm](https://img.shields.io/npm/dw/@manthanankolekar/ng-loader)
+![npm](https://img.shields.io/npm/dm/@manthanankolekar/ng-loader)
+![npm](https://img.shields.io/npm/dy/@manthanankolekar/ng-loader)
+![npm](https://img.shields.io/npm/dt/@manthanankolekar/ng-loader)
 
 ## Installation
 
@@ -57,6 +62,10 @@ export class AppComponent {
   }
 }
 ```
+
+## Demo
+
+[Stackblitz](https://stackblitz.com/edit/stackblitz-starters-prq7zg)
 
 ## License
 
