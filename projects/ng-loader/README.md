@@ -65,7 +65,7 @@ export class AppComponent {
 
 ## Demo
 
-[Stackblitz](https://stackblitz.com/edit/stackblitz-starters-prq7zg)
+[Stackblitz](https://stackblitz.com/edit/ng-loader-example)
 
 ## License
 
