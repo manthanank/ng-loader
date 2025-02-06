@@ -1,17 +1,16 @@
 import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'ng-loader',
-  standalone: true,
-  imports: [],
-  template: `
+    selector: 'ng-loader',
+    imports: [],
+    template: `
     @if (loading) {
     <div class="loader-overlay">
       <div class="loader"></div>
     </div>
     }
   `,
-  styles: `
+    styles: `
     .loader-overlay {
       position: fixed;
       top: 0;
@@ -39,7 +38,7 @@ import { Component, Input } from '@angular/core';
         transform: rotate(360deg);
       }
     }
-  `,
+  `
 })
 export class NgLoaderComponent {
   @Input() loading: boolean = false;
