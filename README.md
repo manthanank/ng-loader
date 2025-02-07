@@ -24,7 +24,6 @@ import { NgLoaderComponent } from '@manthanankolekar/ng-loader';
 
 @Component({
   selector: 'app-root',
-  standalone: true,
   imports: [
     NgLoaderComponent
   ],
@@ -39,7 +38,7 @@ export class AppComponent {
 Use
 
 ```html
-<ng-loader [loading]="isLoading"></ng-loader>
+<ng-loader [loading]="isLoading" [loaderMessage]="loaderMessage"></ng-loader>
 ```
 
 ```typescript
@@ -47,18 +46,20 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  standalone: true,
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
 
 export class AppComponent {
-  isLoading = true;
+  isLoading = false;
+  loaderMessage = 'Loading, please wait...';
 
-  constructor() {
+  toggleLoader() {
+    this.isLoading = true;
+    // Optionally update the loader message here.
     setTimeout(() => {
       this.isLoading = false;
-    }, 5000);
+    }, 3000);
   }
 }
 ```

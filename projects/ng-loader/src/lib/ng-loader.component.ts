@@ -1,16 +1,18 @@
 import { Component, Input } from '@angular/core';
 
 @Component({
-    selector: 'ng-loader',
-    imports: [],
-    template: `
-    @if (loading) {
+  selector: 'ng-loader',
+  template: `
+  @if (loading) {
     <div class="loader-overlay">
       <div class="loader"></div>
+      @if (loaderMessage) {
+        <div class="loader-message">{{ loaderMessage }}</div>
+      }
     </div>
-    }
+  }
   `,
-    styles: `
+  styles: `
     .loader-overlay {
       position: fixed;
       top: 0;
@@ -18,6 +20,7 @@ import { Component, Input } from '@angular/core';
       right: 0;
       bottom: 0;
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
       background: rgba(0, 0, 0, 0.5);
@@ -29,6 +32,11 @@ import { Component, Input } from '@angular/core';
       width: 120px;
       height: 120px;
       animation: spin 2s linear infinite;
+    }
+    .loader-message {
+      margin-top: 15px;
+      color: #fff;
+      font-size: 1.2rem;
     }
     @keyframes spin {
       0% {
@@ -42,4 +50,5 @@ import { Component, Input } from '@angular/core';
 })
 export class NgLoaderComponent {
   @Input() loading: boolean = false;
+  @Input() loaderMessage?: string;
 }

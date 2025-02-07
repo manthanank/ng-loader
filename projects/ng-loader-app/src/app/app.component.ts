@@ -5,13 +5,15 @@ import { NgLoaderComponent } from '../../../ng-loader/src/public-api';
     selector: 'app-root',
     imports: [NgLoaderComponent],
     templateUrl: './app.component.html',
-    styleUrl: './app.component.css'
+    styleUrls: ['./app.component.css'] // changed from styleUrl to styleUrls
 })
 export class AppComponent {
   isLoading = false;
+  loaderMessage: string = 'Loading, please wait...';
 
   toggleLoader() {
-    this.isLoading = !this.isLoading;
+    this.isLoading = true;
+    // Optionally update the loader message here if desired.
     setTimeout(() => {
       this.isLoading = false;
     }, 3000);
