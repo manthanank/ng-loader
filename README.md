@@ -1,27 +1,72 @@
 # NgLoader
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.8.
+This is a simple Angular loader library.
 
-## Development server
+![npm](https://img.shields.io/npm/dw/@manthanankolekar/ng-loader)
+![npm](https://img.shields.io/npm/dm/@manthanankolekar/ng-loader)
+![npm](https://img.shields.io/npm/dy/@manthanankolekar/ng-loader)
+![npm](https://img.shields.io/npm/dt/@manthanankolekar/ng-loader)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Installation
 
-## Code scaffolding
+```bash
+npm install @manthanankolekar/ng-loader
+```
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Usage
 
-## Build
+Import
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+```typescript
+import { Component } from '@angular/core';
 
-## Running unit tests
+import { NgLoaderComponent } from '@manthanankolekar/ng-loader';
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+@Component({
+  selector: 'app-root',
+  standalone: true,
+  imports: [
+    NgLoaderComponent
+  ],
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
+})
+export class AppComponent {
+  title = 'ng-loader';
+}
+```
 
-## Running end-to-end tests
+Use
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+```html
+<ng-loader [loading]="isLoading"></ng-loader>
+```
 
-## Further help
+```typescript
+import { Component } from '@angular/core';
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+@Component({
+  selector: 'app-root',
+  standalone: true,
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
+})
+
+export class AppComponent {
+  isLoading = true;
+
+  constructor() {
+    setTimeout(() => {
+      this.isLoading = false;
+    }, 5000);
+  }
+}
+```
+
+## Demo
+
+[Stackblitz](https://stackblitz.com/edit/ng-loader-example)
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
